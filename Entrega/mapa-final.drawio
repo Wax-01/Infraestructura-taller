@@ -1,0 +1,140 @@
+<mxfile host="app.diagrams.net" modified="2026-10-12T18:00:00.000Z" agent="AREM-Taller4" version="24.0.0" type="device">
+  <diagram name="Mapa de Infraestructura AS-IS - Encuesta de Autosatisfaccion" id="mapa-encuesta-v3">
+    <mxGraphModel dx="1600" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1180" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo" value="Mapa de Infraestructura (AS-IS) — Logística de la Encuesta de Autosatisfacción&#10;Universidad de La Sabana · Vicerrectoría de Desarrollo (Coordinación de Experiencia y Servicio)" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#222222;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="1520" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ZONA 1: Sistemas institucionales -->
+        <mxCell id="zona_inst" value="Sistemas institucionales (infraestructura de TI de la U · on-premise o nube de la U, no confirmado)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=4;fillColor=#eef2f7;strokeColor=#5b6b80;fontStyle=1;fontSize=13;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="680" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="siga" value="⚠️ SIGA (sistema académico institucional)&#10;Horarios, matrícula, programas y datos personales&#10;Fuente única · sin API de integración conocida (H1)&#10;[Redundancia: no confirmada — la administra TI]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#7b1f1f;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="zona_inst">
+          <mxGeometry x="20" y="60" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dbacad" value="Base de datos académica (SIGA)&#10;[Redundancia: no confirmada]&#10;Sin acceso directo para la Vicerrectoría" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#dde3ea;strokeColor=#7f8c9a;fontSize=11;" vertex="1" parent="zona_inst">
+          <mxGeometry x="450" y="55" width="200" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ZONA 2: Microsoft 365 -->
+        <mxCell id="zona_m365" value="Microsoft 365 · tenant institucional de la Universidad (SaaS, operado por Microsoft)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=4;fillColor=#eef2f7;strokeColor=#5b6b80;fontStyle=1;fontSize=13;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="760" y="80" width="800" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="zona_onedrive" value="OneDrive de la coordinadora (cuenta institucional)" style="swimlane;whiteSpace=wrap;html=1;startSize=24;rounded=1;arcSize=4;fillColor=#ffffff;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;fontColor=#1d4f91;verticalAlign=top;" vertex="1" parent="zona_m365">
+          <mxGeometry x="20" y="45" width="460" height="295" as="geometry" />
+        </mxCell>
+        <mxCell id="hoja_muestreo" value="⚠️ Hoja de Muestreo (Excel en OneDrive)&#10;Muestra por programa y semestre · copia de datos personales (H2)&#10;[Instancia única · sin respaldo independiente (H3)]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#7b1f1f;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="zona_onedrive">
+          <mxGeometry x="20" y="40" width="420" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hoja_pat" value="⚠️ Hoja de Asignación PAT (Excel en OneDrive)&#10;Cruce manual de clases y disponibilidad PAT (H4)&#10;[Instancia única · sin respaldo independiente]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#7b1f1f;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="zona_onedrive">
+          <mxGeometry x="20" y="180" width="420" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="exchange" value="⚠️ Correo institucional (Exchange Online)&#10;Buzón de la coordinadora: avisos enviados y respuestas de profesores&#10;[Servicio redundante del proveedor · uso manual, uno a uno (H5)]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#7b1f1f;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="zona_m365">
+          <mxGeometry x="510" y="110" width="270" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- ZONA 3: Equipo de la coordinadora -->
+        <mxCell id="zona_pc" value="Equipo de la coordinadora (estación de trabajo local)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=4;fillColor=#fff8ec;strokeColor=#b26a00;fontStyle=1;fontSize=13;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="380" y="520" width="840" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="pc" value="⚠️ PC / portátil de la coordinadora&#10;Navegador + Excel + Outlook&#10;[Instancia única · un solo operador (H6)]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff5e6;fontColor=#8c4a00;strokeColor=#b26a00;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="zona_pc">
+          <mxGeometry x="20" y="60" width="400" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="exportes" value="⚠️ Archivos exportados de SIGA&#10;(CSV/Excel en carpeta local)&#10;[Instancia única · cifrado y borrado&#10;no confirmados (H2)]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#fff5e6;fontColor=#8c4a00;strokeColor=#b26a00;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="zona_pc">
+          <mxGeometry x="500" y="45" width="300" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- ACTORES (fuera de las capas) -->
+        <mxCell id="coord" value="Coordinadora de la encuesta&#10;(Vicerrectoría de Desarrollo)&#10;[Actor · operadora única]" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="570" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pat" value="Estudiantes PAT&#10;[Actor] Reportan disponibilidad&#10;y aplican la encuesta en el salón" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="820" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="profes" value="Profesores&#10;[Actor] Reciben el aviso y&#10;aceptan o rechazan ceder su clase" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="570" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="encuestados" value="Estudiantes encuestados&#10;(muestra por programa y semestre)&#10;[Actor] Responden en el salón" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="820" width="260" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- CONEXIONES -->
+        <mxCell id="c1" value="consulta interna" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;startArrow=block;fontSize=10;strokeColor=#556070;" edge="1" parent="1" source="siga" target="dbacad">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="H1: exportación manual CSV/Excel&#10;(descarga por navegador, HTTPS)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;dashed=1;strokeColor=#c0392b;strokeWidth=2;" edge="1" parent="1" source="siga" target="exportes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="250" y="460" /><mxPoint x="1030" y="460" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c3" value="H2: carga de datos personales&#10;a las hojas (HTTPS / sincronización OneDrive)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;strokeColor=#1d4f91;" edge="1" parent="1" source="exportes" target="zona_onedrive">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="clases muestreadas&#10;(copia manual)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;strokeColor=#556070;" edge="1" parent="1" source="hoja_muestreo" target="hoja_pat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="edita las hojas&#10;(Excel, HTTPS)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;strokeColor=#1d4f91;" edge="1" parent="1" source="pc" target="zona_onedrive">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="560" y="480" /><mxPoint x="1010" y="480" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c6" value="H5: correo escrito a mano,&#10;uno a uno (Outlook, HTTPS)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;dashed=1;strokeColor=#c0392b;strokeWidth=2;" edge="1" parent="1" source="pc" target="exchange">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="700" y="500" /><mxPoint x="1410" y="500" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c7" value="aviso de clase muestreada (SMTP/TLS)&#10;respuesta acepta / rechaza (correo)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;startArrow=block;fontSize=10;strokeColor=#556070;" edge="1" parent="1" source="exchange" target="profes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1500" y="440" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c8" value="opera (H6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;strokeColor=#1d4f91;" edge="1" parent="1" source="coord" target="pc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="disponibilidad horaria&#10;(canal por confirmar, pregunta P7)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;dashed=1;strokeColor=#556070;" edge="1" parent="1" source="pat" target="pc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="600" y="875" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c10" value="aplica la encuesta en el salón" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;strokeColor=#2e7d32;strokeWidth=2;" edge="1" parent="1" source="pat" target="encuestados">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="170" y="960" /><mxPoint x="1430" y="960" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c11" value="cede el espacio&#10;de su clase" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;strokeColor=#2e7d32;strokeWidth=2;" edge="1" parent="1" source="profes" target="encuestados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- LEYENDA -->
+        <mxCell id="zona_leyenda" value="Leyenda" style="swimlane;whiteSpace=wrap;html=1;startSize=24;rounded=1;arcSize=4;fillColor=#ffffff;strokeColor=#999999;fontStyle=1;fontSize=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1000" width="1520" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="Actor (fuera de&#10;la infraestructura)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="zona_leyenda">
+          <mxGeometry x="20" y="35" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="Base de datos /&#10;almacén" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#dde3ea;strokeColor=#7f8c9a;fontSize=10;" vertex="1" parent="zona_leyenda">
+          <mxGeometry x="180" y="30" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="Zona = dónde vive&#10;y corre el componente" style="swimlane;whiteSpace=wrap;html=1;startSize=16;rounded=1;fillColor=#eef2f7;strokeColor=#5b6b80;fontSize=9;" vertex="1" parent="zona_leyenda">
+          <mxGeometry x="320" y="30" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="⚠️ Componente en riesgo&#10;(SPOF o cuello de botella)" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#7b1f1f;fontSize=10;fontStyle=1;" vertex="1" parent="zona_leyenda">
+          <mxGeometry x="500" y="35" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" value="⚠️ Punto de operación&#10;local en riesgo" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff5e6;fontColor=#8c4a00;strokeColor=#b26a00;fontSize=10;fontStyle=1;" vertex="1" parent="zona_leyenda">
+          <mxGeometry x="700" y="35" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" value="——&gt; conexión digital (HTTPS / SMTP)&#10;- - -&gt; intercambio manual (exportación de archivo, correo escrito a mano)&#10;——&gt; (verde) actividad presencial en el salón&#10;[Redundancia: ...] = redundancia de cada componente crítico" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="zona_leyenda">
+          <mxGeometry x="890" y="28" width="610" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leg7" value="Hallazgos (ver tabla del informe): H6 operadora única (Disponibilidad, Alta) · H3 hojas sin respaldo independiente (Disponibilidad, Alta) · H2 copias de datos personales fuera de SIGA (Seguridad de la información, Alta) · H4 cruce manual PAT (Rendimiento, Media) · H5 correo uno a uno (Rendimiento, Media) · H1 SIGA sin API (Escalabilidad, Media)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#7b1f1f;whiteSpace=wrap;fillColor=#fff5e6;strokeColor=#b26a00;rounded=1;spacingLeft=8;" vertex="1" parent="zona_leyenda">
+          <mxGeometry x="20" y="105" width="1480" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
