@@ -4,6 +4,9 @@
 
 Construir el mapa lógico y/o físico de la infraestructura tecnológica del sistema base y realizar un diagnóstico de debilidades, cuellos de botella y oportunidades de mejora.
 
+> 📢 **Versión Oficial de Entrega (Corte 2 - Corregida)**:  
+> La entrega oficial y completa de este taller se encuentra en la carpeta [`Entrega/`](Entrega/), con el informe técnico ([`Entrega/informe.md`](Entrega/informe.md)), el diagrama de infraestructura en draw.io ([`Entrega/mapa-final.drawio`](Entrega/mapa-final.drawio)) y las referencias bibliográficas ([`Entrega/Referencias.md`](Entrega/Referencias.md)). Esta versión incorpora todas las correcciones de la retroalimentación docente: reorganización por capas de infraestructura (Sistemas institucionales, M365 y Endpoint local), indicación explícita de redundancia vs. instancia única, y la tabla de diagnóstico de riesgos H1-H6 con categorías y prioridades justificadas. También se encuentra sincronizada con el repositorio del proyecto en `Wax-01/Unisabana-solution/04-infraestructura`.
+
 ---
 
 ## 📘 Guía paso a paso
