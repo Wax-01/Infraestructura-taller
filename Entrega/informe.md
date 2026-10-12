@@ -100,7 +100,7 @@ A continuación se presenta la tabla de diagnóstico técnico formal, clasificad
 ## 📈 4. Diagrama final entregado
 
 El diagrama de infraestructura física/lógica actual ha sido modelado en **draw.io** y se encuentra disponible en:
-- Archivo editable: [`mapa-final.drawio`](mapa-final.drawio)
+- Archivo editable: [`mapa-final.drawio`](mapa-final.png)
 
 ### Representación esquemática del mapa de infraestructura AS-IS:
 
